@@ -19,8 +19,12 @@ public class Sum_answer {
 		
 		int c= a+b;
 		System.out.println("두 수의 합은 " + c + "입니다." );
+		// 이 방법도 좋으나, 이 때는 c라는 정수형 변수를 선언하지 않을 경우 
+		// a+b에 괄호를 해야하고(정수형 출력을 위해) 복잡하고 더럽다
+		
 		System.out.printf("%d와 %d의 합은 %d입니다", a, b, (a+b));
 		sc.close();
+		// printf 및 %d 사용: 보다 프로다운 방
 	}
 
 }
