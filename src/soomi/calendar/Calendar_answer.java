@@ -3,7 +3,15 @@ package soomi.calendar;
 import java.util.Scanner;
 
 public class Calendar_answer {
-	public static void main(String[] args) {
+	
+	private static final int[] MAX_DAYS = 
+		{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
+	public int getMaxDaysOfMonth(int month) {
+		return MAX_DAYS[month-1];
+	}
+	
+	public void printSampleCalendar () {
 		System.out.println("Hello, Calendar");
 		System.out.println();
 
@@ -15,25 +23,29 @@ public class Calendar_answer {
 
 			if (i % 7 == 0) {
 				System.out.println();
-
 			}
-
 		}
+	}
 	
+	
+	
+	public static void main(String[] args) {
 
 	
 		// 숫자(월)를 입력받아 그 달이 몇 개의 일로 구성되어 있는지, 즉
 		// 해당 달의 최대 일수 출력하기
 		// 배열 이용하여 해보
 		
-		System.out.println();
 		Scanner sc = new Scanner(System.in);
-		System.out.print("숫자를 입력하세요. : ");
-		int input = sc.nextInt();
-
-		int[] maxDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		Calendar_answer cal = new Calendar_answer();
 		
-		System.out.printf("%d은 %d일까지 있습니다.\n", input, maxDays[input-1]);
+		System.out.print("숫자를 입력하세요. : ");
+		int month = sc.nextInt();
+		System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.getMaxDaysOfMonth(month));
+		System.out.println();
+		
+		cal.printSampleCalendar();
+		
 		sc.close();
 			
 
